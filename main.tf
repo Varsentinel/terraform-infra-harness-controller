@@ -29,14 +29,12 @@ module "delegate" {
 }
 
 module "harness_platform_connector_kubernetes" {
-  source                     = "./module/kubernetes"
-  k8s_connector_identifier   = local.k8s_connector_id
-  k8s_cluster_name           = var.harness_delegate_name
-  k8s_connector_name         = var.harness_delegate_name
-  harness_delegate_name      = var.harness_delegate_name
-  harness_project_identifier = var.harness_project_identifier
-  harness_org_identifier     = var.harness_org_identifier
-  depends_on                 = [module.delegate]
+  source                   = "./module/kubernetes"
+  k8s_connector_identifier = local.k8s_connector_id
+  k8s_cluster_name         = var.harness_delegate_name
+  k8s_connector_name       = var.harness_delegate_name
+  harness_delegate_name    = var.harness_delegate_name
+  depends_on               = [module.delegate]
 }
 
 module "harness_platform_environment" {
