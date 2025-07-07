@@ -1,8 +1,9 @@
 infrastructureDefinition:
   name: ${infrastructureName}
   identifier: ${infrastructureIdentifier}
-  description: ""
-  tags: {}
+  description: Kubernetes Infrastructure for ${infrastructureName}
+  tags:
+    ${infrastructureName}: ""
   orgIdentifier: ${orgIdentifier}
   projectIdentifier: ${projectIdentifier}
   environmentRef: ${envIdentifier}

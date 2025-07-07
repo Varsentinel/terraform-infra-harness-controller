@@ -4,4 +4,3 @@ environment:
   orgIdentifier: ${orgIdentifier}
   projectIdentifier: ${projectIdentifier}
   type: ${envType}
-  tags: {}
