@@ -13,11 +13,3 @@ variable "k8s_cluster_name" {
 variable "harness_delegate_name" {
   type = string
 }
-
-variable "harness_project_identifier" {
-  type = string
-}
-
-variable "harness_org_identifier" {
-  type = string
-}
