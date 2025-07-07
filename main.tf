@@ -49,17 +49,17 @@ module "harness_platform_environment" {
   depends_on                 = [module.harness_platform_connector_kubernetes]
 }
 
-module "harness_platform_infrastructure" {
-  source                                      = "./module/infrastructures"
-  harness_infrastructure_identifier           = local.harness_infrastructure_id
-  harness_infrastructure_name                 = var.harness_delegate_name
-  harness_infrastructure_org_identifier       = var.harness_org_identifier
-  harness_infrastructure_project_identifier   = var.harness_project_identifier
-  harness_infrastructure_release_name         = var.harness_infrastructure_release_name
-  harness_infrastructure_env_identifier       = local.harness_env_id
-  harness_infrastructure_type                 = var.harness_infrastructure_type            #KUBERNETES
-  harness_infrastructure_deployment_type      = var.harness_infrastructure_deployment_type #KubernetesDirect
-  harness_infrastructure_namespace            = var.harness_namespace
-  harness_infrastructure_connector_identifier = var.harness_delegate_name
-  depends_on                                  = [module.harness_platform_environment]
-}
+# module "harness_platform_infrastructure" {
+#   source                                      = "./module/infrastructures"
+#   harness_infrastructure_identifier           = local.harness_infrastructure_id
+#   harness_infrastructure_name                 = var.harness_delegate_name
+#   harness_infrastructure_org_identifier       = var.harness_org_identifier
+#   harness_infrastructure_project_identifier   = var.harness_project_identifier
+#   harness_infrastructure_release_name         = var.harness_infrastructure_release_name
+#   harness_infrastructure_env_identifier       = local.harness_env_id
+#   harness_infrastructure_type                 = var.harness_infrastructure_type            #KUBERNETES
+#   harness_infrastructure_deployment_type      = var.harness_infrastructure_deployment_type #KubernetesDirect
+#   harness_infrastructure_namespace            = var.harness_namespace
+#   harness_infrastructure_connector_identifier = var.harness_delegate_name
+#   depends_on                                  = [module.harness_platform_environment]
+# }
