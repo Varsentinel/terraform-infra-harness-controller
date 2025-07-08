@@ -63,3 +63,7 @@ module "harness_platform_environment" {
 #   harness_infrastructure_connector_identifier = var.harness_delegate_name
 #   depends_on                                  = [module.harness_platform_environment]
 # }
+
+module "harness_platform_service" {
+  source = "./module/services"
+}
