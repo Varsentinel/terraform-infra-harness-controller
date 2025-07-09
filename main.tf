@@ -65,5 +65,7 @@ module "harness_platform_environment" {
 # }
 
 module "harness_platform_service" {
-  source = "./module/services"
+  source                     = "./module/services"
+  harness_org_identifier     = var.harness_org_identifier
+  harness_project_identifier = var.harness_project_identifier
 }
