@@ -1,5 +1,5 @@
 resource "harness_platform_service" "harness_service" {
-  for_each = local.harness_service
+  for_each = { for service in local.harness_service : service.identifier => service }
 
   identifier      = each.value.identifier
   name            = each.value.name
