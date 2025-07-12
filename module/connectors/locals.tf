@@ -14,16 +14,21 @@ locals {
 locals {
   git_connectors = [
     {
-      "name"            = "Harness Nextgen CD"
-      "identifier"      = "harnessnextgencd"
+      "name"            = "MicroFlex GitLab"
+      "identifier"      = "microflexgitlab"
       "anonymous"       = true
-      "description"     = "Harness Nextgen CD"
-      "connection_type" = "Repo"
+      "description"     = "MicroFlex GitLab"
+      "connection_type" = "Account"
       "scope"           = "Project"
-      "url"             = "https://github.com/Varsentinel/harness-nextgen-cd"
+      "url"             = "https://gitlab.com/micro-flex"
       "username"        = "nylespham"
-      "password"        = "account.VarsentinelGitHubPAT"
+      "password"        = "account.MicroFlexGitLab"
       "tags"            = ["microflex"]
+      repos = [
+        {
+          "name" = "harness-nextgen-cd"
+        }
+      ]
     }
   ]
 }
