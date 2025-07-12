@@ -2,7 +2,7 @@ locals {
   harness_service = [
     {
       "name"            = "MongoDB Operator"
-      "identifier"      = "mongodooperator"
+      "identifier"      = "mongodboperator"
       "import_from_git" = "true"
       "git_details" = {
         "store_type"    = "REMOTE"
