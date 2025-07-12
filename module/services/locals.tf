@@ -8,7 +8,7 @@ locals {
         "store_type"    = "REMOTE"
         "connector_ref" = "microflexgitlab"
         "repo_name"     = "harness-nextgen-cd"
-        "file_path"     = ".harness/services/mongodooperator.yaml"
+        "file_path"     = ".harness/services/mongodb_operator.yaml"
         "branch"        = "main"
       }
     }
