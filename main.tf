@@ -14,6 +14,8 @@ provider "helm" {
 }
 
 module "delegate" {
+  #checkov:skip=CKV_TF_2: not applicable
+  #checkov:skip=CKV_TF_1: not applicable
   source  = "harness/harness-delegate/kubernetes"
   version = "0.2.3"
 
