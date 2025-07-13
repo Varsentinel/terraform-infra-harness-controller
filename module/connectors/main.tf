@@ -1,4 +1,4 @@
-resource "harness_platform_connector_gitlab" "harness_nextgen_cd" {
+resource "harness_platform_connector_github" "harness_nextgen_cd" {
   for_each        = { for connector in local.git_connectors : connector.identifier => connector }
   identifier      = each.value.identifier
   name            = each.value.name
@@ -33,5 +33,5 @@ resource "harness_platform_connector_helm" "harness_connector" {
       password_ref = each.value.password
     }
   }
-  depends_on = [harness_platform_connector_gitlab.harness_nextgen_cd]
+  depends_on = [harness_platform_connector_github.harness_nextgen_cd]
 }
