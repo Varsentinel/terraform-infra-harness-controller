@@ -66,15 +66,21 @@ module "harness_platform_environment" {
 #   depends_on                                  = [module.harness_platform_environment]
 # }
 
-# module "harness_platform_connector" {
-#   source     = "./module/connectors"
-#   project_id = var.harness_project_identifier
-#   org_id     = var.harness_org_identifier
-# }
+module "harness_platform_connector" {
+  source     = "./module/connectors"
+  project_id = var.harness_project_identifier
+  org_id     = var.harness_org_identifier
+}
 
-# module "harness_platform_service" {
-#   source                     = "./module/services"
-#   harness_org_identifier     = var.harness_org_identifier
-#   harness_project_identifier = var.harness_project_identifier
-#   depends_on                 = [module.harness_platform_connector]
-# }
+module "harness_platform_service" {
+  source                     = "./module/services"
+  harness_org_identifier     = var.harness_org_identifier
+  harness_project_identifier = var.harness_project_identifier
+  depends_on                 = [module.harness_platform_connector]
+}
+
+module "harness_platform_template" {
+  source                     = "./module/templates"
+  harness_org_identifier     = var.harness_org_identifier
+  harness_project_identifier = var.harness_project_identifier
+}

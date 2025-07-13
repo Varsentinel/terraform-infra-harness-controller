@@ -1,18 +1,5 @@
 locals {
-  helm_connectors = [
-    {
-      "name"       = "MongoDB Operator"
-      "identifier" = "mongodboperator"
-      "anonymous"  = true
-      "url"        = "https://mongodb.github.io/helm-charts"
-      "username"   = "null"
-      "password"   = "null"
-    }
-  ]
-}
-
-locals {
-  git_connectors = [
+  ci_pipelines = [
     {
       "name"            = "Inventium"
       "identifier"      = "inventium"
