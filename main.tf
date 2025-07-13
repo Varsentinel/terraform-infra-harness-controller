@@ -83,4 +83,12 @@ module "harness_platform_template" {
   source                     = "./module/templates"
   harness_org_identifier     = var.harness_org_identifier
   harness_project_identifier = var.harness_project_identifier
+  depends_on                 = [module.harness_platform_connector]
+}
+
+module "harness_platform_pipeline" {
+  source                     = "./module/pipelines"
+  harness_org_identifier     = var.harness_org_identifier
+  harness_project_identifier = var.harness_project_identifier
+  depends_on                 = [module.harness_platform_template]
 }
