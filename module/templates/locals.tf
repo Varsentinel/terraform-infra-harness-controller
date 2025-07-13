@@ -6,9 +6,9 @@ locals {
       "version"         = "1.0.0"
       "import_from_git" = "true"
       "git_details" = {
-        "store_type"    = "REMOTE"
-        "file_path"     = ".harness/templates/buildimage.yaml"
-        "branch"        = "main"
+        "store_type" = "REMOTE"
+        "file_path"  = ".harness/templates/buildimage.yaml"
+        "branch"     = "main"
       }
     }
   ]
