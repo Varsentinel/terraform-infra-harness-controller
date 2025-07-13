@@ -15,7 +15,7 @@ resource "harness_platform_template" "harness_templates" {
     repo_name     = "harness-nextgen-cd"
   }
   template_import_request {
-    template_name        = each.value.template_name
+    template_name        = each.value.name
     template_version     = each.value.version
     template_description = ""
   }
