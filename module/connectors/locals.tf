@@ -4,6 +4,14 @@ locals {
       "name"       = "MongoDB Operator"
       "identifier" = "mongodboperator"
       "anonymous"  = true
+      "url"        = "https://istio-release.storage.googleapis.com/charts"
+      "username"   = "null"
+      "password"   = "null"
+    },
+    {
+      "name"       = "Istio"
+      "identifier" = "istio"
+      "anonymous"  = true
       "url"        = "https://mongodb.github.io/helm-charts"
       "username"   = "null"
       "password"   = "null"
