@@ -26,6 +26,7 @@ resource "harness_platform_connector_helm" "harness_connector" {
   identifier = each.value.identifier
   name       = each.value.name
   url        = each.value.url
+  org_id     = var.org_id
   dynamic "credentials" {
     for_each = each.value.anonymous ? [] : [1]
     content {
