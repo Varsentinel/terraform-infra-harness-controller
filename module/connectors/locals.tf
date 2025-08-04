@@ -27,7 +27,7 @@ locals {
       "anonymous"       = true
       "description"     = "Inventium Github"
       "connection_type" = "Account"
-      "scope"           = "Project"
+      "scope"           = "Org"
       "url"             = "https://github.com/InventiumOrg"
       "username"        = "nylespham"
       "password"        = "account.inventium-github"

@@ -8,7 +8,7 @@ locals {
       "deployment_type"     = "NativeHelm"
       "git_details" = {
         "store_type"      = "REMOTE"
-        "connector_ref"   = "inventium"
+        "connector_ref"   = "org.inventium"
         "repo_name"       = "harness-nextgen-cd"
         "file_path"       = ".harness/infrastructure/istio_base.yaml"
         "branch"          = "main"

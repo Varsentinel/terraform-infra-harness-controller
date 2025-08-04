@@ -9,7 +9,7 @@ locals {
       "type"       = "PreProduction"
       "git_details" = {
         store_type      = "REMOTE"
-        connector_ref   = "inventium"
+        connector_ref   = "org.inventium"
         repo_name       = "harness-nextgen-cd"
         file_path       = ".harness/environment/vse-dev-app.yaml"
         branch          = "main"
