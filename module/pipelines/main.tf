@@ -9,7 +9,7 @@ resource "harness_platform_pipeline" "harness_pipelines" {
   git_import_info {
     branch_name   = "main"
     file_path     = each.value.git_details.file_path
-    connector_ref = "inventium"
+    connector_ref = "org.inventium"
     repo_name     = "harness-nextgen-cd"
   }
   pipeline_import_request {

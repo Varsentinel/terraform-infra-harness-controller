@@ -12,6 +12,12 @@ provider "helm" {
   }
 }
 
+module "harness_platform_connector" {
+  source     = "./module/connectors"
+  project_id = var.harness_project_identifier
+  org_id     = var.harness_org_identifier
+}
+
 module "delegate" {
   #checkov:skip=CKV_TF_2: not applicable
   #checkov:skip=CKV_TF_1: not applicable
@@ -42,19 +48,13 @@ module "harness_platform_connector_kubernetes" {
 
 module "harness_platform_environment" {
   source     = "./module/environments"
-  depends_on = [module.harness_platform_connector_kubernetes]
+  depends_on = [module.harness_platform_connector_kubernetes, module.harness_platform_connector]
 }
 
 module "harness_platform_infrastructure" {
   source                                = "./module/infrastructures"
   harness_infrastructure_org_identifier = var.harness_org_identifier
-  depends_on                            = [module.harness_platform_environment]
-}
-
-module "harness_platform_connector" {
-  source     = "./module/connectors"
-  project_id = var.harness_project_identifier
-  org_id     = var.harness_org_identifier
+  depends_on                            = [module.harness_platform_environment, module.harness_platform_connector]
 }
 
 module "harness_platform_service" {
@@ -71,9 +71,9 @@ module "harness_platform_template" {
   depends_on                 = [module.harness_platform_connector]
 }
 
-# module "harness_platform_pipeline" {
-#  source                     = "./module/pipelines"
-#  harness_org_identifier     = var.harness_org_identifier
-#  harness_project_identifier = var.harness_project_identifier
-#  depends_on                 = [module.harness_platform_template]
-# }
+module "harness_platform_pipeline" {
+  source                     = "./module/pipelines"
+  harness_org_identifier     = var.harness_org_identifier
+  harness_project_identifier = var.harness_project_identifier
+  depends_on                 = [module.harness_platform_template, module.harness_platform_connector]
+}
