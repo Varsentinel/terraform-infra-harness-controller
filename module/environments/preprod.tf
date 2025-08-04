@@ -1,17 +1,17 @@
 resource "harness_platform_environment" "k8s_environment" {
-  identifier  = var.harness_env_identifier
-  name        = var.harness_env_name
-  org_id      = var.harness_org_identifier
-  project_id  = var.harness_project_identifier
-  tags        = [var.harness_env_name]
-  type        = var.harness_env_type
-  description = ""
+  for_each   = { for env in local.harness_envs : env.identifier => env }
+  identifier = each.value.identifier
+  name       = each.value.name
+  org_id     = each.value.org_id
+  project_id = each.value.project_id
+  type       = each.value.type
+  git_details {
+    store_type      = each.value.git_details.store_type
+    connector_ref   = each.value.git_details.connector_ref
+    repo_name       = each.value.git_details.repo_name
+    file_path       = each.value.git_details.file_path
+    branch          = each.value.git_details.branch
+    import_from_git = each.value.git_details.import_from_git
+  }
 
-  yaml = templatefile("${path.module}/environment.yaml.tpl", {
-    envName           = var.harness_env_name
-    envIdentifier     = var.harness_env_identifier
-    orgIdentifier     = var.harness_org_identifier
-    projectIdentifier = var.harness_project_identifier
-    envType           = var.harness_env_type
-  })
 }
