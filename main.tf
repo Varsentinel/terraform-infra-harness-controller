@@ -22,7 +22,7 @@ module "delegate" {
   #checkov:skip=CKV_TF_2: not applicable
   #checkov:skip=CKV_TF_1: not applicable
   source  = "harness/harness-delegate/kubernetes"
-  version = "0.2.3"
+  version = "0.2.4"
 
   account_id       = var.harness_account_id
   delegate_token   = var.harness_delegate_token

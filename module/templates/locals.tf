@@ -1,8 +1,8 @@
 locals {
   harness_templates = [
     {
-      "name"            = "build-image-stage"
-      "identifier"      = "buildimagestage"
+      "name"            = "build-container-stage"
+      "identifier"      = "buildcontainerstage"
       "scope"           = "Org"
       "version"         = "1.0.0"
       "import_from_git" = true
