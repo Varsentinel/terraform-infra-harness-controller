@@ -76,3 +76,10 @@ module "harness_platform_pipeline" {
   harness_project_identifier = var.harness_project_identifier
   depends_on                 = [module.harness_platform_template, module.harness_platform_connector]
 }
+
+module "harness_platform_inputset" {
+  source     = "./module/inputsets"
+  project_id = var.harness_project_identifier
+  org_id     = var.harness_org_identifier
+  depends_on = [module.harness_platform_pipeline]
+}
