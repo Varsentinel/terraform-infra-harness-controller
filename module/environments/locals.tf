@@ -4,7 +4,6 @@ locals {
       "identifier" = "vse_dev_apps"
       "name"       = "vse-dev-apps"
       "org_id"     = "default"
-      "project_id" = "Inventium"
       "tags"       = ["vse-dev-apps"]
       "type"       = "PreProduction"
       "git_details" = {
