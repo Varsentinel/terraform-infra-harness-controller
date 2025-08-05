@@ -3,7 +3,6 @@ resource "harness_platform_environment" "k8s_environment" {
   identifier = each.value.identifier
   name       = each.value.name
   org_id     = each.value.org_id
-  project_id = each.value.project_id
   type       = each.value.type
   git_details {
     store_type      = each.value.git_details.store_type
