@@ -1,7 +1,7 @@
 locals {
   harness_infrastructures = [
     {
-      "name"                = "Istio Base"
+      "name"                = "isito-base"
       "identifier"          = "istiobase"
       "env_id"              = "vse_dev_apps"
       "infrastructure_type" = "KubernetesDirect"
