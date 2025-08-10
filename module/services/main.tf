@@ -4,7 +4,6 @@ resource "harness_platform_service" "harness_service" {
   identifier      = each.value.identifier
   name            = each.value.name
   import_from_git = each.value.import_from_git
-  project_id      = var.harness_project_identifier
   org_id          = var.harness_org_identifier
   git_details {
     store_type    = each.value.git_details.store_type

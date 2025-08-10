@@ -12,10 +12,10 @@ locals {
 locals {
   cd_pipelines = [
     {
-      "name"       = "Deploy Istio Base"
-      "identifier" = "DeployIstioBase"
+      "name"       = "Helm Depoy"
+      "identifier" = "HelmDeploy"
       "git_details" = {
-        "file_path" = ".harness/continous_deployment/deploy_istio_base.yaml"
+        "file_path" = ".harness/continous_deployment/helm_deploy.yaml"
       }
     }
   ]

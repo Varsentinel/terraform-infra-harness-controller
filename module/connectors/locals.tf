@@ -15,6 +15,14 @@ locals {
       "url"        = "https://istio-release.storage.googleapis.com/charts"
       "username"   = "null"
       "password"   = "null"
+    },
+    {
+      "name"       = "Jet Stack"
+      "identifier" = "jetstack"
+      "anonymous"  = true
+      "url"        = "https://charts.jetstack.io"
+      "username"   = "null"
+      "password"   = "null"
     }
   ]
 }
