@@ -23,6 +23,14 @@ locals {
       "url"        = "https://charts.jetstack.io"
       "username"   = "null"
       "password"   = "null"
+    },
+    {
+      "name"       = "External DNS"
+      "identifier" = "externaldns"
+      "anonymous"  = true
+      "url"        = "https://kubernetes-sigs.github.io/external-dns/"
+      "username"   = "null"
+      "password"   = "null"
     }
   ]
 }

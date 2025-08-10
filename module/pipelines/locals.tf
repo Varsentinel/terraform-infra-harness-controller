@@ -12,7 +12,7 @@ locals {
 locals {
   cd_pipelines = [
     {
-      "name"       = "Helm Depoy"
+      "name"       = "Helm Deploy"
       "identifier" = "HelmDeploy"
       "git_details" = {
         "file_path" = ".harness/continous_deployment/helm_deploy.yaml"

@@ -35,6 +35,18 @@ locals {
         "file_path"     = ".harness/services/cert-manager.yaml"
         "branch"        = "main"
       }
+    },
+    {
+      "name"            = "ExternalDNS"
+      "identifier"      = "externaldns"
+      "import_from_git" = "true"
+      "git_details" = {
+        "store_type"    = "REMOTE"
+        "connector_ref" = "org.inventium"
+        "repo_name"     = "harness-nextgen-cd"
+        "file_path"     = ".harness/services/externaldns.yaml"
+        "branch"        = "main"
+      }
     }
   ]
 }
