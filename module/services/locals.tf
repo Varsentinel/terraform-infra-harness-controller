@@ -1,7 +1,7 @@
 locals {
   harness_service = [
     {
-      "name"            = "MongoDB Operator"
+      "name"            = "mongodb-operator"
       "identifier"      = "mongodboperator"
       "import_from_git" = "true"
       "git_details" = {
@@ -13,7 +13,7 @@ locals {
       }
     },
     {
-      "name"            = "Istio Base"
+      "name"            = "istio-base"
       "identifier"      = "istiobase"
       "import_from_git" = "true"
       "git_details" = {
@@ -25,7 +25,7 @@ locals {
       }
     },
     {
-      "name"            = "Cert Manager"
+      "name"            = "cert-manager"
       "identifier"      = "certmanager"
       "import_from_git" = "true"
       "git_details" = {
@@ -37,7 +37,7 @@ locals {
       }
     },
     {
-      "name"            = "ExternalDNS"
+      "name"            = "external-dns"
       "identifier"      = "externaldns"
       "import_from_git" = "true"
       "git_details" = {
