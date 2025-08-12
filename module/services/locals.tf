@@ -25,6 +25,18 @@ locals {
       }
     },
     {
+      "name"            = "istio-gateway"
+      "identifier"      = "istiogateway"
+      "import_from_git" = "true"
+      "git_details" = {
+        "store_type"    = "REMOTE"
+        "connector_ref" = "org.inventium"
+        "repo_name"     = "harness-nextgen-cd"
+        "file_path"     = ".harness/services/istiogateway.yaml"
+        "branch"        = "main"
+      }
+    },
+    {
       "name"            = "cert-manager"
       "identifier"      = "certmanager"
       "import_from_git" = "true"
