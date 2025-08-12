@@ -1,4 +1,7 @@
 resource "harness_platform_infrastructure" "k8s_apps_infrastructure" {
+  lifecycle {
+    ignore_changes = [name, yaml, git_details]
+  }
   for_each        = { for infrastructure in local.harness_infrastructures : infrastructure.identifier => infrastructure }
   identifier      = each.value.identifier
   name            = each.value.name
@@ -15,3 +18,4 @@ resource "harness_platform_infrastructure" "k8s_apps_infrastructure" {
     import_from_git = each.value.git_details.import_from_git
   }
 }
+
